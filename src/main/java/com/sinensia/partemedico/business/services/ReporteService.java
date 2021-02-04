@@ -10,5 +10,5 @@ public interface ReporteService {
 	
 	public List<Reporte> read(int codigo);
 	
-	public Reporte crear(Reporte usuario);
+	public Reporte crear(Reporte reporte);
 }

@@ -2,9 +2,12 @@ package com.sinensia.partemedico.business.services.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.sinensia.partemedico.business.model.Reporte;
 import com.sinensia.partemedico.business.services.ReporteService;
 
+@Service
 public class ReporteServiceImpl implements ReporteService {
 
 	@Override
@@ -20,7 +23,7 @@ public class ReporteServiceImpl implements ReporteService {
 	}
 
 	@Override
-	public Reporte crear(Reporte usuario) {
+	public Reporte crear(Reporte reporte) {
 		// TODO Auto-generated method stub
 		return null;
 	}
