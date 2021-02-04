@@ -20,7 +20,7 @@ public class ReportePL {
 	 @TableGenerator(name = "GENERADOR_REPORTES",
 		table = "SECUENCIAS",
 		pkColumnName = "NOMBRE_SECUENCIA",
-		pkColumnValue = "PRODUCTOS_SEQ",
+		pkColumnValue = "REPORTE_SEQ",
 		valueColumnName = "VALOR_SECUENCIA",
 		allocationSize = 1
 		)
