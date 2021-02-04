@@ -8,7 +8,9 @@ public interface ReporteService {
 	
 	public List<Reporte> getAll();
 	
-	public List<Reporte> read(int codigo);
+	public Reporte read(int codigo);
+	
+	public List<Reporte> getByDni(String dni);
 	
 	public Reporte crear(Reporte reporte);
 }
