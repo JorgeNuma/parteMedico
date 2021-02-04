@@ -4,16 +4,27 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 @Entity
 @Table(name="REPORTES")
 public class ReportePL {
 
 	@Id
+	 @TableGenerator(name = "GENERADOR_REPORTES",
+		table = "SECUENCIAS",
+		pkColumnName = "NOMBRE_SECUENCIA",
+		pkColumnValue = "PRODUCTOS_SEQ",
+		valueColumnName = "VALOR_SECUENCIA",
+		allocationSize = 1
+		)
+		@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REPORTES")
 	private Integer codigo; // AUTOGENERADO
 	
 	@ManyToOne(targetEntity = UsuarioPL.class)
