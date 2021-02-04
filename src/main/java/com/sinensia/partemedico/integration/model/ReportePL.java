@@ -4,17 +4,30 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 @Entity
+@Table(name="REPORTES")
 public class ReportePL {
 
 	@Id
+	 @TableGenerator(name = "GENERADOR_REPORTES",
+		table = "SECUENCIAS",
+		pkColumnName = "NOMBRE_SECUENCIA",
+		pkColumnValue = "REPORTE_SEQ",
+		valueColumnName = "VALOR_SECUENCIA",
+		allocationSize = 1
+		)
+		@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REPORTES")
 	private Integer codigo; // AUTOGENERADO
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = UsuarioPL.class)
 	@JoinColumn(name="DNI_USUARIO")
 	private String dniUsuario;
 	
@@ -27,8 +40,9 @@ public class ReportePL {
 	private Double sistolica;
 	private Double diastolica;
 	
-	private int peso;
+	private Double peso;
 	
+	@Column(name="NUMERO_PASOS")
 	private Integer pasos;
 	
 	public ReportePL() {
@@ -43,11 +57,11 @@ public class ReportePL {
 		this.dniUsuario = dniUsuario;
 	}
 
-	public int getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 
@@ -138,5 +152,4 @@ public class ReportePL {
 				+ longitud + ", latitud=" + latitud + ", sistolica=" + sistolica + ", diastolica=" + diastolica
 				+ ", pasos=" + pasos + "]";
 	}
-	
 }
