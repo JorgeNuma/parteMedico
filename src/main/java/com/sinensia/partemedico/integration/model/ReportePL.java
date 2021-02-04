@@ -21,7 +21,7 @@ public class ReportePL {
 		table = "SECUENCIAS",
 		pkColumnName = "NOMBRE_SECUENCIA",
 		pkColumnValue = "REPORTE_SEQ",
-		valueColumnName = "VALOR",
+		valueColumnName = "VALOR_SECUENCIA",
 		allocationSize = 1
 		)
 		@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REPORTES")
