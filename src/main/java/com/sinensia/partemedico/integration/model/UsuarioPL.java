@@ -1,19 +1,38 @@
-package com.sinensia.partemedico.business.model;
+package com.sinensia.partemedico.integration.model;
 
 import java.util.Date;
 
-public class Usuario {
-	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="USUARIOS")
+public class UsuarioPL {
+
+	@Id
 	private String dni;
+	
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
-	private Sexo sexo;
+	
+	@Enumerated(EnumType.STRING)
+	private SexoPL sexo;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="FECHA_NACIMIENTO")
 	private Date fechaNacimiento;
+	
 	private int altura;
 	private String observaciones;
 	
-	public Usuario() {
+	public UsuarioPL() {
 		
 	}
 
@@ -49,11 +68,11 @@ public class Usuario {
 		this.apellido2 = apellido2;
 	}
 
-	public Sexo getSexo() {
+	public SexoPL getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(Sexo sexo) {
+	public void setSexo(SexoPL sexo) {
 		this.sexo = sexo;
 	}
 
@@ -97,7 +116,7 @@ public class Usuario {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		UsuarioPL other = (UsuarioPL) obj;
 		if (dni == null) {
 			if (other.dni != null)
 				return false;
@@ -108,9 +127,9 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [dni=" + dni + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
+		return "UsuarioPL [dni=" + dni + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
 				+ ", sexo=" + sexo + ", fechaNacimiento=" + fechaNacimiento + ", altura=" + altura + ", observaciones="
 				+ observaciones + "]";
-	}	
-
+	}
+	
 }
