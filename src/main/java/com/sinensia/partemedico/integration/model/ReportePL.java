@@ -7,14 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="REPORTES")
 public class ReportePL {
 
 	@Id
 	private Integer codigo; // AUTOGENERADO
 	
-	@ManyToOne
+	@ManyToOne(targetEntity = UsuarioPL.class)
 	@JoinColumn(name="DNI_USUARIO")
 	private String dniUsuario;
 	
@@ -27,8 +29,9 @@ public class ReportePL {
 	private Double sistolica;
 	private Double diastolica;
 	
-	private int peso;
+	private Double peso;
 	
+	@Column(name="NUMERO_PASOS")
 	private Integer pasos;
 	
 	public ReportePL() {
@@ -43,11 +46,11 @@ public class ReportePL {
 		this.dniUsuario = dniUsuario;
 	}
 
-	public int getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 
