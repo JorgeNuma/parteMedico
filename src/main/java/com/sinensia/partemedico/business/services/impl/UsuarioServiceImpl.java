@@ -22,7 +22,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public List<Usuario> read(String dni) {
+	public Usuario read(String dni) {
 		// TODO Auto-generated method stub
 		return null;
 	}
