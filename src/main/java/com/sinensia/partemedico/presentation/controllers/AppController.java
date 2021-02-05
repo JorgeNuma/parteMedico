@@ -68,12 +68,12 @@ public class AppController {
 		return null;
 	}
 
-	@PostMapping("/altaUsuario")
+	@PostMapping("/alta-usuarios")
 	public String altaUsuario() {
 		return null;
 	}
 
-	@PostMapping("/altaReporte")
+	@PostMapping("/alta-reportes")
 	public String altaReporte() {
 		return null;
 	}
