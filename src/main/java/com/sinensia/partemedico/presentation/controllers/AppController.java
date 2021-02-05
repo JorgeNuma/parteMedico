@@ -22,8 +22,8 @@ public class AppController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-
-	@RequestMapping(value = { "/home", "/", "" })
+	
+	@RequestMapping(value={"/home","/",""})
 	public String home() {
 		return "index";
 	}
