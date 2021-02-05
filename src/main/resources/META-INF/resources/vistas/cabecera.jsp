@@ -11,13 +11,13 @@
         <a class="nav-link" href="listado-reportes">Ver reportes</a>
       </li>
             <li class="nav-item active">
-        <a class="nav-link" href="alta-reportes">Crear reporte</a>
+        <a class="nav-link" href="/vistas/altaReporte.jsp">Crear reporte</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="listado-usuarios">Ver usuarios</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="alta-usuarios">Usuarios</a>
+        <a class="nav-link" href="/vistas/altaUsuarios.jsp">Usuarios</a>
       </li>
     </ul>
   </div>
