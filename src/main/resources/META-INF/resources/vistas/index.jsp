@@ -7,6 +7,8 @@
 </head>
 <body>
 	<%@include file="cabecera.jsp" %>
-
+	
+	
+	<%@include file="jquery.jsp" %>
 </body>
 </html>
