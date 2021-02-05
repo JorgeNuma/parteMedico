@@ -27,9 +27,9 @@ public class ReportePL {
 		@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REPORTES")
 	private Integer codigo; // AUTOGENERADO
 	
-	@ManyToOne(targetEntity = UsuarioPL.class)
+	@ManyToOne
 	@JoinColumn(name="DNI_USUARIO")
-	private String dniUsuario;
+	private UsuarioPL usuario;
 	
 	@Column(name="HORA_REPORTE")
 	private Date horaReporte;
@@ -43,18 +43,18 @@ public class ReportePL {
 	private Double peso;
 	
 	@Column(name="NUMERO_PASOS")
-	private Integer pasos;
+	private Integer numeroPasos;
 	
 	public ReportePL() {
 		
 	}
-	
-	public String getDniUsuario() {
-		return dniUsuario;
+
+	public UsuarioPL getUsuario() {
+		return usuario;
 	}
 
-	public void setDniUsuario(String dniUsuario) {
-		this.dniUsuario = dniUsuario;
+	public void setUsuario(UsuarioPL usuario) {
+		this.usuario = usuario;
 	}
 
 	public Double getPeso() {
@@ -113,12 +113,12 @@ public class ReportePL {
 		this.diastolica = diastolica;
 	}
 
-	public Integer getPasos() {
-		return pasos;
+	public Integer getNumeroPasos() {
+		return numeroPasos;
 	}
 
-	public void setPasos(Integer pasos) {
-		this.pasos = pasos;
+	public void setNumeroPasos(Integer numeroPasos) {
+		this.numeroPasos = numeroPasos;
 	}
 
 	@Override
@@ -148,8 +148,9 @@ public class ReportePL {
 
 	@Override
 	public String toString() {
-		return "ReportePL [codigo=" + codigo + ", dni=" + dniUsuario + ", horaReporte=" + horaReporte + ", longitud="
+		return "ReportePL [codigo=" + codigo + ", usuario=" + usuario + ", horaReporte=" + horaReporte + ", longitud="
 				+ longitud + ", latitud=" + latitud + ", sistolica=" + sistolica + ", diastolica=" + diastolica
-				+ ", pasos=" + pasos + "]";
+				+ ", peso=" + peso + ", pasos=" + numeroPasos + "]";
 	}
+	
 }

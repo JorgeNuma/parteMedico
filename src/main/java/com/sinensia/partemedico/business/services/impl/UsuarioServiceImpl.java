@@ -18,6 +18,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		List<UsuarioPL> usuarioPL = usuarioPLRepository.findAll();
 		
 		List<Usuario> usuarios = new ArrayList<>();
+		
 		return null;
 	}
 

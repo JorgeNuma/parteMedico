@@ -7,12 +7,12 @@
     <!-- Integration TO Business -->
  	  
   	<mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.UsuarioPL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Usuario</class-b>
+    	<class-a>com.sinensia.partemedico.integration.model.UsuarioPL</class-a>
+    	<class-b>com.sinensia.partemedico.business.model.Usuario</class-b>
   	</mapping>
   	<mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.ReportePL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Reporte</class-b>
+    	<class-a>com.sinensia.partemedico.integration.model.ReportePL</class-a>
+    	<class-b>com.sinensia.partemedico.business.model.Reporte</class-b>
   	</mapping>
   	
 </mappings>
