@@ -41,9 +41,10 @@ public class UsuarioController {
 	public Usuario create(@RequestBody Usuario usuario) {
 		return usuarioService.crear(usuario);
 	}
-	
+
 	@GetMapping("/{dni}/reportes")
 	public List<Reporte> getByDni(@PathVariable String dni){
 		return reporteService.getByDni(dni);
 	}
 }
+

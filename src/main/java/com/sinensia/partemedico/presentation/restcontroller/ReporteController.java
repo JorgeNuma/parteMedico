@@ -36,5 +36,4 @@ public class ReporteController {
 	public Reporte save(@RequestBody Reporte reporte) {
 		return reporteService.crear(reporte);
 	}
-
 }
