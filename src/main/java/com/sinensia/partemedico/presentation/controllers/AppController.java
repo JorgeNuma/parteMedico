@@ -130,7 +130,6 @@ public class AppController {
 		try {
 			r.setHoraReporte(sdf.parse(request.getParameter("horaReporte")));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
