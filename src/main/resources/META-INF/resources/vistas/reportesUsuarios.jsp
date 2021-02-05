@@ -31,7 +31,7 @@
 			<th>Peso</th>
 			<th>Numero de Pasos</th>
 		</tr>
-  		<c:forEach var="reportes" items="${reportes}">
+  		<c:forEach var="reportes" items="${reportesUsuarios}">
 		<tr>
 			<td>${reportes.codigo}</td>
 			<td>${reportes.usuario.dni}</td>
