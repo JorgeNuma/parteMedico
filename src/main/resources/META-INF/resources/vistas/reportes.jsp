@@ -40,9 +40,6 @@
 
 	  </tbody>
 	</table>
-
-	
-	
 	
 	<%@include file="jquery.jsp" %>
 </body>
