@@ -24,11 +24,13 @@ public class MapperPersonalizado {
 		usuario.setNombre(usuariopl.getNombre());
 		usuario.setApellido1(usuariopl.getApellido1());
 		usuario.setApellido2(usuariopl.getApellido2());
+		
 		try {
 			usuario.setSexo(fromSexoPLtoSexo(usuariopl.getSexo()));
 		} catch (Exception e) {
 			usuario.setSexo(null);
 		}
+		
 		usuario.setFechaNacimiento(usuariopl.getFechaNacimiento());
 		usuario.setAltura(usuariopl.getAltura());
 		usuario.setObservaciones(usuariopl.getObservaciones());
@@ -43,11 +45,13 @@ public class MapperPersonalizado {
 		usuariopl.setNombre(usuario.getNombre());
 		usuariopl.setApellido1(usuario.getApellido1());
 		usuariopl.setApellido2(usuario.getApellido2());
+		
 		try {
 			usuariopl.setSexo(fromSexotoSexoPL(usuario.getSexo()));
 		} catch (Exception e) {
 			usuariopl.setSexo(null);
 		}
+		
 		usuariopl.setFechaNacimiento(usuario.getFechaNacimiento());
 		usuariopl.setAltura(usuario.getAltura());
 		usuariopl.setObservaciones(usuario.getObservaciones());
