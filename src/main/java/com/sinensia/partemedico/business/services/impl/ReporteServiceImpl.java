@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +11,7 @@ import com.sinensia.partemedico.business.model.Reporte;
 import com.sinensia.partemedico.business.services.ReporteService;
 import com.sinensia.partemedico.integration.model.ReportePL;
 import com.sinensia.partemedico.integration.repositories.ReportePLRepository;
+import com.sinensia.partemedico.integration.utilidades.MapperPersonalizado;
 
 @Service
 public class ReporteServiceImpl implements ReporteService {
@@ -20,7 +20,7 @@ public class ReporteServiceImpl implements ReporteService {
 	private ReportePLRepository reportePLRepository;
 	
 	@Autowired
-	private DozerBeanMapper dozerBeanMapper;
+	private MapperPersonalizado mapperPersonalizado;
 	
 	@Override
 	public List<Reporte> getAll() {
@@ -28,21 +28,21 @@ public class ReporteServiceImpl implements ReporteService {
 		List<Reporte>reportes = new ArrayList<Reporte>();
 		
 		for(ReportePL reportePL : reportesPL) {
-			reportes.add(dozerBeanMapper.map(reportePL, Reporte.class));
+			reportes.add(mapperPersonalizado.fromReportePLToReporte(reportePL));
 		}
 		return reportes;
 	}
 
 	@Override
 	public Reporte crear(Reporte reporte) {
-		ReportePL rpPL = reportePLRepository.save(dozerBeanMapper.map(reporte, ReportePL.class));
-		return dozerBeanMapper.map(rpPL, Reporte.class);
+		ReportePL rpPL = reportePLRepository.save(mapperPersonalizado.fromReporteToReportePL(reporte));
+		return mapperPersonalizado.fromReportePLToReporte(rpPL);
 	}
 
 	@Override
 	public Reporte read(int codigo) {
 		Optional<ReportePL> optional = reportePLRepository.findById(codigo); 
-		return optional.isPresent() ? dozerBeanMapper.map(optional, Reporte.class) : null;
+		return optional.isPresent() ? mapperPersonalizado.fromReportePLToReporte(optional.get()) : null;
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class ReporteServiceImpl implements ReporteService {
 		List<Reporte>reportes = new ArrayList<Reporte>();
 		
 		for(ReportePL reportePL : reportesPL) {
-			reportes.add(dozerBeanMapper.map(reportePL, Reporte.class));
+			reportes.add(mapperPersonalizado.fromReportePLToReporte(reportePL));
 		}
 		return reportes;
 	}
