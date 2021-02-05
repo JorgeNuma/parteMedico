@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -120,17 +119,16 @@ public class AppController {
 		
 	}
 
-	/*@RequestMapping(value="/alta-reporte", method = RequestMethod.POST)
+
+	@RequestMapping(value="/alta-reporte", method = RequestMethod.POST)
 	public String altaReporte(HttpServletRequest request) {
 		
 		Reporte r = new Reporte();
-		
 		r.setCodigo(Integer.parseInt(request.getParameter("codigo")));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat();
-		
-		r.setHoraReporte(horaReporte);
-		private Integer codigo;
+	
+		/*private Integer codigo;
 		private Usuario usuario;
 		private Date horaReporte;
 		private String longitud;
@@ -138,8 +136,34 @@ public class AppController {
 		private Double diastolica;
 		private Double sistolica;
 		private Double peso;
-		private Integer numeroPasos;
+		private Integer numeroPasos;*/
+		
+		//r.setHoraReporte(horaReporte);
+		//r.setCodigo(Integer.parseInt(request.getParameter("codigo")));
+		
+		
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		
+		try {
+			r.setHoraReporte(sdf.parse(request.getParameter("horaReporte")));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		r.setLongitud(request.getParameter("longitud"));
+		r.setLatitud(request.getParameter("latitud"));
+		r.setDiastolica(Double.parseDouble(request.getParameter("diastolica")));
+		r.setSistolica(Double.parseDouble(request.getParameter("sistolica")));
+		r.setPeso(Double.parseDouble(request.getParameter("peso")));
+		r.setNumeroPasos(Integer.parseInt(request.getParameter("numeroPasos")));
+		
+		String dni = request.getParameter("dniUsuario");
+				
+		Usuario u = usuarioService.read(dni);
+		
+		r.setUsuario(u);
 		
 		return null;
-	}*/
+	}
 }
