@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Usuario {
 	
-	private Usuario usuario;
+	private String dni;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
@@ -16,14 +16,13 @@ public class Usuario {
 	public Usuario() {
 		
 	}
-
-	public Usuario getUsuario() {
-		return usuario;
+	
+	public String getDni() {
+		return dni;
 	}
 
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public String getNombre() {
@@ -85,8 +84,8 @@ public class Usuario {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Usuario [usuario=");
-		builder.append(usuario);
+		builder.append("Usuario [dni=");
+		builder.append(dni);
 		builder.append(", nombre=");
 		builder.append(nombre);
 		builder.append(", apellido1=");
