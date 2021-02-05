@@ -28,7 +28,7 @@ public class ReportePL {
 		@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REPORTES")
 	private Integer codigo; // AUTOGENERADO
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="DNI_USUARIO")
 	private UsuarioPL usuario;
 	
