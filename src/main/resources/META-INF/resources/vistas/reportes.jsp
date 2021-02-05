@@ -26,14 +26,7 @@
 	     	<tr>
 		      <th scope="row">${reporte.codigo}</th>
 		      <td>
-		      	<ul class="list-group list-group-flush">
-				  <li class="list-group-item">${reporte.usuario.dni}</li>
-				  <li class="list-group-item">${reporte.usuario.nombre} ${reporte.usuario.apellido1} ${reporte.usuario.apellido2}</li>
-				  <li class="list-group-item"><fmt:formatDate pattern="dd/MM/yyyy" value="${reporte.usuario.fechaNacimiento}" /></li>
-				  <li class="list-group-item">${reporte.usuario.sexo}</li>
-				  <li class="list-group-item">${reporte.usuario.altura} cm</li>
-				  <li class="list-group-item">${reporte.usuario.observaciones}</li>
-				</ul>
+		      	<a href="#" class="badge badge-info">${reporte.usuario.dni}</a>
 			  </td>
 		      <td>${reporte.diastolica}</td>
 		      <td>${reporte.sistolica}</td>
