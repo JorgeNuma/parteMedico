@@ -14,7 +14,7 @@ public class MapperPersonalizado {
 	}
 	//----------------MAPEO DE USUARIOS----------------------
 
-	public Usuario fromUsuarioPLtoUsuario(UsuarioPL usuariopl) {
+	public Usuario fromUsuarioPLToUsuario(UsuarioPL usuariopl) {
 		Usuario usuario = new Usuario();
 		
 		usuario.setDni(usuariopl.getDni());
@@ -60,9 +60,32 @@ public class MapperPersonalizado {
 		Reporte reporte = new Reporte();
 		
 		reporte.setCodigo(reportepl.getCodigo());
-		reporte.set
+		reporte.setUsuario(fromUsuarioPLToUsuario(reportepl.getUsuario()));
+		reporte.setHoraReporte(reportepl.getHoraReporte());
+		reporte.setLongitud(reportepl.getLongitud());
+		reporte.setLatitud(reportepl.getLatitud());
+		reporte.setSistolica(reportepl.getSistolica());
+		reporte.setDiastolica(reportepl.getDiastolica());
+		reporte.setPeso(reporte.getPeso());
+		reporte.setNumeroPasos(reportepl.getNumeroPasos());
 		
 		return reporte;
+	}
+	
+	public ReportePL fromReporteToReportePL(Reporte reporte) {
+		ReportePL reportepl = new ReportePL();
+		
+		reportepl.setCodigo(reporte.getCodigo());
+		reportepl.setUsuario(fromUsuarioToUsuarioPL(reporte.getUsuario()));
+		reportepl.setHoraReporte(reporte.getHoraReporte());
+		reportepl.setLongitud(reporte.getLongitud());
+		reportepl.setLatitud(reporte.getLatitud());
+		reportepl.setSistolica(reporte.getSistolica());
+		reportepl.setDiastolica(reporte.getDiastolica());
+		reportepl.setPeso(reporte.getPeso());
+		reportepl.setNumeroPasos(reporte.getNumeroPasos());
+		
+		return reportepl;
 	}
 	
 }
