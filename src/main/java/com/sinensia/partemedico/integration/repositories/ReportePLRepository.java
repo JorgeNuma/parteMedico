@@ -10,6 +10,6 @@ import com.sinensia.partemedico.integration.model.ReportePL;
 @Repository
 public interface ReportePLRepository extends JpaRepository<ReportePL, Integer>{
 	
-	public List<ReportePL> findByDniUsuario(String dni);
+	public List<ReportePL> findByUsuarioDni(String dni);
 
 }
