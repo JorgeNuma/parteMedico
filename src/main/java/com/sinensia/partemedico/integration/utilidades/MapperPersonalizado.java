@@ -69,7 +69,7 @@ public class MapperPersonalizado {
 		reporte.setLatitud(reportepl.getLatitud());
 		reporte.setSistolica(reportepl.getSistolica());
 		reporte.setDiastolica(reportepl.getDiastolica());
-		reporte.setPeso(reporte.getPeso());
+		reporte.setPeso(reportepl.getPeso());
 		reporte.setNumeroPasos(reportepl.getNumeroPasos());
 		
 		return reporte;
