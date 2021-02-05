@@ -6,42 +6,46 @@
 <body>
 <%@include file="cabecera.jsp" %>
 
-<form action="/alta-reportes" method="post">
-	<table>
-		<tr>
-			<td>Dni:</td>
-			<td><input type="text" name="dniUsuario" size="9"></td>
-		</tr>
-		<tr>
-			<td>Longitud:</td>
-			<td><input type="text" name="longitud" size="20"></td>
-		</tr>
-		<tr>
-			<td>latitud:</td>
-			<td><input type="text" name="latitud" size="20"></td>
-		</tr>
-		<tr>
-			<td>DiastÃ³lica:</td>
-			<td><input type="number" name="diastolica" step="any"></td>
-		</tr>
-		<tr>
-			<td>SistÃ³lica:</td>
-			<td><input type="number" name="sistolica" step="any"></td>
-		</tr>
-		<tr>
-			<td>Peso:</td>
-			<td><input type="number" name="peso" step="any" placeholder="Kg"></td>
-		</tr>
-		<tr>
-			<td>NÃºmero de pasos:</td>
-			<td><input type="number" name="numeroPasos"></td>
-		</tr>
-		<tr>
-			<td><input type="submit" value="Crear"></td>
-			<td></td>
-		</tr>
-</table>
+<form action="/alta-reportes" method="post" class=" p-3">
+	<div class="form-group">
+	  <label for="dniUsuario">Dni</label>
+	  <input type="text" class="form-control w-50" name="dniUsuario" size="9">
+	</div>
+	<div class="form-row">
+
+	 <div class="form-group col-md-6">
+	   <label for="longitud">Longitud:</label>
+	   <input type="text" class="form-control" name="longitud" size="20">
+	 </div>
+	
+	 <div class="form-group  col-md-6">
+	   <label for="latitud">Latitud:</label>
+	   <input type="text" class="form-control" name="latitud" size="20">
+	 </div>
+	</div>
+	<div class="form-row">
+	<div class="form-group col-md-6">
+	  <label for="diastolica">Diastólica:</label>
+	  <input type="number" class="form-control" name="diastolica" step="any">
+	</div>
+	<div class="form-group col-md-6">
+	  <label for="sistolica">Sistólica:</label>
+	  <input type="number" class="form-control" name="sistolica" step="any">
+	</div>
+	</div>
+	<div class="form-group">
+	  <label for="peso">Peso:</label>
+	  <input type="number" class="form-control w-50" name="peso" step="any" placeholder="Kg">
+	</div>
+	<div class="form-group">
+	  <label for="numeroPasos">Número de pasos:</label>
+	  <input type="number" class="form-control w-50" name="numeroPasos">
+	</div>
+	<div class="form-group">
+	  <input type="submit" class="btn btn-primary" value="Crear">
+	</div>
 </form>
 
+	<%@include file="jquery.jsp" %>
 </body>
 </html>
