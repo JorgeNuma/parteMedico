@@ -2,6 +2,8 @@ package com.sinensia.partemedico.presentation.restcontroller;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,14 +35,8 @@ public class ReporteController {
 	}
 	
 	@PostMapping
+	@Transactional
 	public Reporte save(@RequestBody Reporte reporte) {
 		return reporteService.crear(reporte);
 	}
-	
-	@GetMapping("/{dni}")
-	public List<Reporte> getByDni(@PathVariable String dni){
-		return reporteService.getByDni(dni);
-	}
-	
-
 }
