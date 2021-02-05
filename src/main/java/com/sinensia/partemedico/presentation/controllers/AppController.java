@@ -2,10 +2,13 @@ package com.sinensia.partemedico.presentation.controllers;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sinensia.partemedico.business.model.Reporte;
@@ -48,4 +51,16 @@ public class AppController {
 		
 		return "usuarios";
 	}
+	
+	@RequestMapping("/reportes-usuarios")
+	public String getReportesUsuarios(Model model,@PathParam(value = "dni") String dni) {
+		
+		List<Reporte> reportes = reporteService.getByDni(dni);
+		
+		model.addAttribute("reportes", reportes);
+		
+		return "reportesUsuarios";
+	}
+	
+	
 }
