@@ -147,7 +147,6 @@ public class AppController {
 		
 		r.setUsuario(u);
 		
-		
 		return "altaReporte";
 	}
 }
