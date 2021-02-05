@@ -25,7 +25,9 @@
 	    <c:forEach var="reporte" items="${reportes}">
 	     	<tr>
 		      <th scope="row">${reporte.codigo}</th>
-		      <td>${reporte.usuario.dni}</td>
+		      <td>
+		      	<a href="#" class="badge badge-info">${reporte.usuario.dni}</a>
+			  </td>
 		      <td>${reporte.diastolica}</td>
 		      <td>${reporte.sistolica}</td>
 		      <td>${reporte.latitud}</td>
@@ -38,9 +40,6 @@
 
 	  </tbody>
 	</table>
-
-	
-	
 	
 	<%@include file="jquery.jsp" %>
 </body>
