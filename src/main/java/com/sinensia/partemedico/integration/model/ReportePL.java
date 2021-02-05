@@ -2,6 +2,7 @@ package com.sinensia.partemedico.integration.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class ReportePL {
 		@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REPORTES")
 	private Integer codigo; // AUTOGENERADO
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="DNI_USUARIO")
 	private UsuarioPL usuario;
 	
