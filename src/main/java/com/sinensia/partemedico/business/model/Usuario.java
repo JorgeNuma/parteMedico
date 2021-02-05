@@ -16,7 +16,7 @@ public class Usuario {
 	public Usuario() {
 		
 	}
-
+	
 	public String getDni() {
 		return dni;
 	}
@@ -82,13 +82,37 @@ public class Usuario {
 	}
 
 	@Override
+
+
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Usuario [dni=");
+		builder.append(dni);
+		builder.append(", nombre=");
+		builder.append(nombre);
+		builder.append(", apellido1=");
+		builder.append(apellido1);
+		builder.append(", apellido2=");
+		builder.append(apellido2);
+		builder.append(", sexo=");
+		builder.append(sexo);
+		builder.append(", fechaNacimiento=");
+		builder.append(fechaNacimiento);
+		builder.append(", altura=");
+		builder.append(altura);
+		builder.append(", observaciones=");
+		builder.append(observaciones);
+		builder.append("]");
+		return builder.toString();
+
+	}
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -106,11 +130,5 @@ public class Usuario {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Usuario [dni=" + dni + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
-				+ ", sexo=" + sexo + ", fechaNacimiento=" + fechaNacimiento + ", altura=" + altura + ", observaciones="
-				+ observaciones + "]";
-	}
 
 }
