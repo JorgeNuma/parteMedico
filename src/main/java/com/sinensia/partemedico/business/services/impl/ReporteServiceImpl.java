@@ -33,7 +33,6 @@ public class ReporteServiceImpl implements ReporteService {
 		return reportes;
 	}
 
-
 	@Override
 	public Reporte crear(Reporte reporte) {
 		ReportePL rpPL = reportePLRepository.save(dozerBeanMapper.map(reporte, ReportePL.class));
@@ -48,7 +47,7 @@ public class ReporteServiceImpl implements ReporteService {
 
 	@Override
 	public List<Reporte> getByDni(String dni) {
-		List<ReportePL> reportesPL = reportePLRepository.findByDniUsuario(dni);
+		List<ReportePL> reportesPL = reportePLRepository.findByUsuarioDni(dni);
 		List<Reporte>reportes = new ArrayList<Reporte>();
 		
 		for(ReportePL reportePL : reportesPL) {

@@ -4,25 +4,25 @@ import java.util.Date;
 
 public class Reporte {
 
-	private int codigo;
+	private Integer codigo;
+	private Usuario usuario;
 	private Date horaReporte;
 	private String longitud;
 	private String latitud;
 	private Double diastolica;
 	private Double sistolica;
-	private double peso;
-	private int numeroPasos;
-	private Usuario dniUsuario;
+	private Double peso;
+	private Integer numeroPasos;
 	
 	public Reporte() {
 		
 	}
-
-	public int getCodigo() {
+	
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -66,28 +66,28 @@ public class Reporte {
 		this.sistolica = sistolica;
 	}
 
-	public double getPeso() {
+	public Double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(double peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 
-	public int getNumeroPasos() {
+	public Integer getNumeroPasos() {
 		return numeroPasos;
 	}
 
-	public void setNumeroPasos(int numeroPasos) {
+	public void setNumeroPasos(Integer numeroPasos) {
 		this.numeroPasos = numeroPasos;
 	}
 
-	public Usuario getDniUsuario() {
-		return dniUsuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setDniUsuario(Usuario dniUsuario) {
-		this.dniUsuario = dniUsuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
@@ -114,9 +114,11 @@ public class Reporte {
 
 	@Override
 	public String toString() {
-		return "Reporte [codigo=" + codigo + ", horaReporte=" + horaReporte + ", longitud=" + longitud + ", latitud="
-				+ latitud + ", diastolica=" + diastolica + ", sistolica=" + sistolica + ", peso=" + peso
-				+ ", numeroPasos=" + numeroPasos + ", dniUsuario=" + dniUsuario + "]";
+		return "Reporte [codigo=" + codigo + ", usuario=" + usuario + ", horaReporte=" + horaReporte + ", longitud="
+				+ longitud + ", latitud=" + latitud + ", diastolica=" + diastolica + ", sistolica=" + sistolica
+				+ ", peso=" + peso + ", numeroPasos=" + numeroPasos + "]";
 	}
+
+	
 	
 }
