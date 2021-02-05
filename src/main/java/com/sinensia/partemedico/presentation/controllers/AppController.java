@@ -116,8 +116,13 @@ public class AppController {
 		return "altaUsuarios";
 		
 	}
-
-	@RequestMapping(value="/alta-reporte", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/alta-reportes", method = RequestMethod.GET)
+	public String getFormularioReporte(HttpServletRequest request) {
+		return "altaReporte";
+	}
+	
+	@RequestMapping(value="/alta-reportes", method = RequestMethod.POST)
 	public String altaReporte(HttpServletRequest request) {
 		
 		Reporte r = new Reporte();
