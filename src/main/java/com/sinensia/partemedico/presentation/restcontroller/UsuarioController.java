@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinensia.partemedico.business.model.Reporte;
 import com.sinensia.partemedico.business.model.Usuario;
+import com.sinensia.partemedico.business.services.ReporteService;
 import com.sinensia.partemedico.business.services.UsuarioService;
 
 @RestController
@@ -21,6 +23,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private ReporteService reporteService;
 
 	@GetMapping
 	public List<Usuario> getAll() {
@@ -36,6 +41,9 @@ public class UsuarioController {
 	public Usuario create(@RequestBody Usuario usuario) {
 		return usuarioService.crear(usuario);
 	}
+	
+	@GetMapping("/{dni}/reportes")
+	public List<Reporte> getByDni(@PathVariable String dni){
+		return reporteService.getByDni(dni);
+	}
 }
-
-//BORRAME

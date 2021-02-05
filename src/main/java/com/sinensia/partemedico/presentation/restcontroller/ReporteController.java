@@ -36,11 +36,5 @@ public class ReporteController {
 	public Reporte save(@RequestBody Reporte reporte) {
 		return reporteService.crear(reporte);
 	}
-	
-	@GetMapping("/{dni}")
-	public List<Reporte> getByDni(@PathVariable String dni){
-		return reporteService.getByDni(dni);
-	}
-	
 
 }
