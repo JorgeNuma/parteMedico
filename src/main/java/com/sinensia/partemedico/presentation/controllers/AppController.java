@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sinensia.partemedico.business.model.Reporte;
@@ -13,6 +14,7 @@ import com.sinensia.partemedico.business.services.ReporteService;
 import com.sinensia.partemedico.business.services.UsuarioService;
 
 @Controller
+@CrossOrigin
 @RequestMapping("/partemedico")
 public class AppController {
 
@@ -22,7 +24,7 @@ public class AppController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	@RequestMapping(value = {"/home","/",""})
+	@RequestMapping(value={"/home","/",""})
 	public String home() {
 		return "index";									
 	}
