@@ -6,7 +6,7 @@
 <body>
 <%@include file="cabecera.jsp" %>
 
-<form action="/alta-reportes" method="post" class=" p-3">
+<form action="/partemedico/alta-reportes" method="post" class=" p-3">
 	<div class="form-group">
 	  <label for="dniUsuario">Dni</label>
 	  <input type="text" class="form-control w-50" name="dniUsuario" size="9">
