@@ -25,7 +25,7 @@
 	    <c:forEach var="reporte" items="${reportes}">
 	     	<tr>
 		      <th scope="row">${reporte.codigo}</th>
-		      <td>Mark</td>
+		      <td>${reporte.usuario.dni}</td>
 		      <td>${reporte.diastolica}</td>
 		      <td>${reporte.sistolica}</td>
 		      <td>${reporte.latitud}</td>
