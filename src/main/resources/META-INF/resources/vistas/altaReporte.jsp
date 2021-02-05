@@ -24,22 +24,28 @@
 	 </div>
 	</div>
 	<div class="form-row">
-	<div class="form-group col-md-6">
-	  <label for="diastolica">Diastólica:</label>
-	  <input type="number" class="form-control" name="diastolica" step="any">
+		<div class="form-group col-md-6">
+		  <label for="diastolica">Diastólica:</label>
+		  <input type="number" class="form-control" name="diastolica" step="any">
+		</div>
+		<div class="form-group col-md-6">
+		  <label for="sistolica">Sistólica:</label>
+		  <input type="number" class="form-control" name="sistolica" step="any">
+		</div>
 	</div>
-	<div class="form-group col-md-6">
-	  <label for="sistolica">Sistólica:</label>
-	  <input type="number" class="form-control" name="sistolica" step="any">
-	</div>
-	</div>
-	<div class="form-group">
-	  <label for="peso">Peso:</label>
-	  <input type="number" class="form-control w-50" name="peso" step="any" placeholder="Kg">
-	</div>
-	<div class="form-group">
-	  <label for="numeroPasos">Número de pasos:</label>
-	  <input type="number" class="form-control w-50" name="numeroPasos">
+	<div class="form-row">
+		<div class="form-group col-sm-4">
+		  <label for="peso">Peso:</label>
+		  <input type="number" class="form-control w-50" name="peso" step="any" placeholder="Kg">
+		</div>
+		<div class="form-group col-sm-4">
+		  <label for="numeroPasos">Número de pasos:</label>
+		  <input type="number" class="form-control w-50" name="numeroPasos">
+		</div>
+		<div class="form-group col-sm-4">
+			<label for="horaReporte">Fecha Nacimiento: </label>
+			<input type="Date" class="form-control" name="horaReporte"  >
+		</div>		
 	</div>
 	<div class="form-group">
 	  <input type="submit" class="btn btn-primary" value="Crear">
