@@ -34,17 +34,17 @@
 		</div>
 	</div>
 	<div class="form-row">
-		<div class="form-group col-sm-4">
+		<div class="form-group col-md-4">
 		  <label for="peso">Peso:</label>
 		  <input type="number" class="form-control w-50" name="peso" step="any" placeholder="Kg">
 		</div>
-		<div class="form-group col-sm-4">
+		<div class="form-group col-md-4">
 		  <label for="numeroPasos">Número de pasos:</label>
 		  <input type="number" class="form-control w-50" name="numeroPasos">
 		</div>
-		<div class="form-group col-sm-4">
-			<label for="horaReporte">Fecha Nacimiento: </label>
-			<input type="Date" class="form-control" name="horaReporte"  >
+		<div class="form-group col-md-4">
+			<label for="horaReporte">Fecha de Reporte: </label>
+			<input type="datetime-local" class="form-control" name="horaReporte"  >
 		</div>		
 	</div>
 	<div class="form-group">

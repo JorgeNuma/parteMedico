@@ -129,8 +129,8 @@ public class AppController {
 		Reporte r = new Reporte();
 		
 		//r.setCodigo(Integer.parseInt(request.getParameter("codigo")));
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 		
 		try {
 			r.setHoraReporte(sdf.parse(request.getParameter("horaReporte")));
@@ -150,6 +150,8 @@ public class AppController {
 		Usuario u = usuarioService.read(dni);
 		
 		r.setUsuario(u);
+		
+		reporteService.crear(r);
 		
 		return "altaReporte";
 	}
