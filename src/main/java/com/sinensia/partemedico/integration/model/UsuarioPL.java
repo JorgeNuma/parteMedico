@@ -18,7 +18,6 @@ import javax.persistence.TemporalType;
 public class UsuarioPL {
 
 	@Id
-	@ManyToOne
 	private String dni;
 	
 	private String nombre;

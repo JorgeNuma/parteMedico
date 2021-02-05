@@ -1,5 +1,7 @@
 package com.sinensia.partemedico.integration.utilidades;
 
+import javax.annotation.ManagedBean;
+
 import com.sinensia.partemedico.business.model.Reporte;
 import com.sinensia.partemedico.business.model.Sexo;
 import com.sinensia.partemedico.business.model.Usuario;
@@ -7,6 +9,7 @@ import com.sinensia.partemedico.integration.model.ReportePL;
 import com.sinensia.partemedico.integration.model.SexoPL;
 import com.sinensia.partemedico.integration.model.UsuarioPL;
 
+@ManagedBean
 public class MapperPersonalizado {
 	
 	public MapperPersonalizado() {
