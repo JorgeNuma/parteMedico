@@ -84,7 +84,7 @@ public class AppController {
 		return "buscarReporte";
 	}
 
-	@RequestMapping("/alta-usuarios")
+	@RequestMapping(value="/alta-usuarios", method = RequestMethod.GET)
 	public String getFormularioUsuario() {
 
 		return "altaUsuarios";
@@ -130,7 +130,6 @@ public class AppController {
 		try {
 			r.setHoraReporte(sdf.parse(request.getParameter("horaReporte")));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -146,7 +145,6 @@ public class AppController {
 		Usuario u = usuarioService.read(dni);
 		
 		r.setUsuario(u);
-		
 		
 		return "altaReporte";
 	}

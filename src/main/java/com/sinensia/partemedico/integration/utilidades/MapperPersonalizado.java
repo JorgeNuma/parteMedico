@@ -1,7 +1,5 @@
 package com.sinensia.partemedico.integration.utilidades;
 
-import java.util.Optional;
-
 import javax.annotation.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
