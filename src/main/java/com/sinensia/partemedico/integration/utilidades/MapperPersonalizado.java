@@ -1,6 +1,10 @@
 package com.sinensia.partemedico.integration.utilidades;
 
+import java.util.Optional;
+
 import javax.annotation.ManagedBean;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sinensia.partemedico.business.model.Reporte;
 import com.sinensia.partemedico.business.model.Sexo;
@@ -8,9 +12,13 @@ import com.sinensia.partemedico.business.model.Usuario;
 import com.sinensia.partemedico.integration.model.ReportePL;
 import com.sinensia.partemedico.integration.model.SexoPL;
 import com.sinensia.partemedico.integration.model.UsuarioPL;
+import com.sinensia.partemedico.integration.repositories.UsuarioPLRepository;
 
 @ManagedBean
 public class MapperPersonalizado {
+	
+	@Autowired
+	private UsuarioPLRepository usuarioplRepository;
 	
 	public MapperPersonalizado() {
 		
@@ -74,9 +82,8 @@ public class MapperPersonalizado {
 	public Reporte fromReportePLToReporte(ReportePL reportepl) {
 		Reporte reporte = new Reporte();
 		
-		reporte.setCodigo(reportepl.getCodigo());
-		Usuario aux = fromUsuarioPLToUsuario(reportepl.getUsuario());
-		reporte.setUsuario(aux);
+		reporte.setCodigo(reportepl.getCodigo());	
+		reporte.setUsuario(fromUsuarioPLToUsuario(reportepl.getUsuario()));
 		reporte.setHoraReporte(reportepl.getHoraReporte());
 		reporte.setLongitud(reportepl.getLongitud());
 		reporte.setLatitud(reportepl.getLatitud());
