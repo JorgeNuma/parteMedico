@@ -17,7 +17,7 @@
         <a class="nav-link" href="/partemedico/listado-usuarios">Ver usuarios</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/vistas/altaUsuarios.jsp">Usuarios</a>
+        <a class="nav-link" href="/vistas/altaUsuarios.jsp">Crear usuario</a>
       </li>
     </ul>
   </div>
