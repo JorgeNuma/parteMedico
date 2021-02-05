@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +11,13 @@ import com.sinensia.partemedico.business.model.Usuario;
 import com.sinensia.partemedico.business.services.UsuarioService;
 import com.sinensia.partemedico.integration.model.UsuarioPL;
 import com.sinensia.partemedico.integration.repositories.UsuarioPLRepository;
+import com.sinensia.partemedico.integration.utilidades.MapperPersonalizado;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 	
 	@Autowired
-	private DozerBeanMapper dozerBeanMapper;
+	private MapperPersonalizado mapperPersonalizado;
 	
 	@Autowired
 	private UsuarioPLRepository usuarioPLRepository;
@@ -30,7 +30,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		List<Usuario> usuarios = new ArrayList<>();
 		
 		for (UsuarioPL usuarioPL : usuariosPL) {
-			usuarios.add(dozerBeanMapper.map(usuarioPL, Usuario.class));
+			usuarios.add(mapperPersonalizado.fromUsuarioPLToUsuario(usuarioPL));
 		}
 		
 		return usuarios;
@@ -43,7 +43,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		
 		UsuarioPL usuarioPL = optionalUsuarioPL.isPresent() ? optionalUsuarioPL.get() : null;
 		
-		Usuario usuario = dozerBeanMapper.map(usuarioPL, Usuario.class);
+		Usuario usuario = mapperPersonalizado.fromUsuarioPLToUsuario(usuarioPL);
 		
 		return usuario;
 	}
@@ -51,11 +51,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public Usuario crear(Usuario usuario) {
 		
-		UsuarioPL usuarioPL = dozerBeanMapper.map(usuario, UsuarioPL.class);
+		UsuarioPL usuarioPL = mapperPersonalizado.fromUsuarioToUsuarioPL(usuario);
 		
 		UsuarioPL createdUsuarioPL = usuarioPLRepository.save(usuarioPL);
 		
-		Usuario usuarios = dozerBeanMapper.map(createdUsuarioPL, Usuario.class);
+		Usuario usuarios = mapperPersonalizado.fromUsuarioPLToUsuario(createdUsuarioPL);
 		
 		return usuarios;
 	}
