@@ -12,6 +12,8 @@ public interface ReportePLRepository extends JpaRepository<ReportePL, Integer>{
 	
 
 	public List<ReportePL> findByUsuarioDni(String dni);
+	
+	
 
 
 }
