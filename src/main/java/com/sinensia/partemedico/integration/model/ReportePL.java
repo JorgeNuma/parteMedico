@@ -146,11 +146,31 @@ public class ReportePL {
 		return true;
 	}
 
+
 	@Override
 	public String toString() {
-		return "ReportePL [codigo=" + codigo + ", usuario=" + usuario + ", horaReporte=" + horaReporte + ", longitud="
-				+ longitud + ", latitud=" + latitud + ", sistolica=" + sistolica + ", diastolica=" + diastolica
-				+ ", peso=" + peso + ", pasos=" + numeroPasos + "]";
+
+		StringBuilder builder = new StringBuilder();
+		builder.append("ReportePL [codigo=");
+		builder.append(codigo);
+		builder.append(", usuario=");
+		builder.append(usuario);
+		builder.append(", horaReporte=");
+		builder.append(horaReporte);
+		builder.append(", longitud=");
+		builder.append(longitud);
+		builder.append(", latitud=");
+		builder.append(latitud);
+		builder.append(", sistolica=");
+		builder.append(sistolica);
+		builder.append(", diastolica=");
+		builder.append(diastolica);
+		builder.append(", peso=");
+		builder.append(peso);
+		builder.append(", pasos=");
+		builder.append(numeroPasos);
+		builder.append("]");
+		return builder.toString();
 	}
-	
+
 }
