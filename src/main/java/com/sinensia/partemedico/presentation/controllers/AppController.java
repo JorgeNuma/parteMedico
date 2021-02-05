@@ -86,7 +86,6 @@ public class AppController {
 
 	@RequestMapping("/alta-usuarios")
 	public String getFormularioUsuario() {
-
 		return "altaUsuarios";
 	}
 	
