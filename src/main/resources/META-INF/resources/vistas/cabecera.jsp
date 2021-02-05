@@ -8,13 +8,13 @@
         <a class="nav-link" href="home">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listado-reportes">Ver reportes</a>
+        <a class="nav-link" href="/partemedico/listado-reportes">Ver reportes</a>
       </li>
             <li class="nav-item active">
         <a class="nav-link" href="/vistas/altaReporte.jsp">Crear reporte</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="listado-usuarios">Ver usuarios</a>
+        <a class="nav-link" href="/partemedico/listado-usuarios">Ver usuarios</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="/vistas/altaUsuarios.jsp">Usuarios</a>

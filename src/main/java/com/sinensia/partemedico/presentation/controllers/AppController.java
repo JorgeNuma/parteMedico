@@ -1,14 +1,24 @@
 package com.sinensia.partemedico.presentation.controllers;
 
+import java.net.Authenticator.RequestorType;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sinensia.partemedico.business.model.Reporte;
+import com.sinensia.partemedico.business.model.Sexo;
 import com.sinensia.partemedico.business.model.Usuario;
 import com.sinensia.partemedico.business.services.ReporteService;
 import com.sinensia.partemedico.business.services.UsuarioService;
@@ -22,8 +32,8 @@ public class AppController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-	
-	@RequestMapping(value={"/home","/",""})
+
+	@RequestMapping(value = { "/home", "/", "" })
 	public String home() {
 		return "index";
 	}
@@ -49,28 +59,67 @@ public class AppController {
 	}
 
 	@RequestMapping("/reportesUsuario/{dni}")
-	public String getListadoReportesUsuario(Model model, String dni) {
+	public String getListadoReportesUsuario(Model model, @PathVariable("dni") String dni) {
 
 		List<Reporte> reportes = reporteService.getByDni(dni);
-		
-		model.addAttribute("reportesUsuario", reportes);
 
-		return "reportesUsuario";
+		model.addAttribute("reportesUsuarios", reportes);
+
+		
+		return "reportesUsuarios";
 	}
 
 	@RequestMapping("/buscarUsuario/{dni}")
-	public String getUsuarioDni() {
-		return null;
+	public String getUsuarioDni(Model model, @PathVariable("dni") String dni) {
+
+		Usuario usuario = usuarioService.read(dni);
+
+		model.addAttribute("buscarUsuario", usuario);
+
+		return "buscarUsuario";
 	}
 
 	@RequestMapping("/buscarReporte/{codigo}")
-	public String getReporteCodigo() {
-		return null;
+	public String getReporteCodigo(Model model, @PathVariable("codigo") int codigo) {
+		Reporte reporte = reporteService.read(codigo);
+
+		model.addAttribute("buscarReporte", reporte);
+
+		return "buscarReporte";
 	}
 
-	@PostMapping("/alta-usuarios")
-	public String altaUsuario() {
-		return null;
+	@RequestMapping("/alta-usuarios")
+	public String getFormularioUsuario() {
+
+		return "altaUsuarios";
+	}
+	
+	@RequestMapping(value="/alta-usuarios", method = RequestMethod.POST)
+	public String postUsuarios(HttpServletRequest request) {
+		
+		Usuario u = new Usuario();
+		u.setDni(request.getParameter("dni"));
+		u.setNombre(request.getParameter("nombre"));
+		u.setApellido1(request.getParameter("apellido1"));
+		u.setApellido2(request.getParameter("apellido2"));
+		u.setAltura(Integer.parseInt(request.getParameter("altura")));
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		try {
+			u.setFechaNacimiento(sdf.parse(request.getParameter("fechaNacimiento")));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		u.setObservaciones(request.getParameter("observaciones"));
+		u.setSexo(Sexo.valueOf(request.getParameter("sexo")));
+		
+		usuarioService.crear(u);
+		
+		return "altaUsuarios";
+		
 	}
 
 	@PostMapping("/alta-reportes")
