@@ -39,8 +39,6 @@ private static Logger logger = LoggerFactory.getLogger(errorController.class);
 		return paginaError;
 	}
 	
-	
-	
 	@Override
 	public String getErrorPath() {
 		// TODO Auto-generated method stub
