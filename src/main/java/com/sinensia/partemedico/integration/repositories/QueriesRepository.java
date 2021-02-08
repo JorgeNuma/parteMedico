@@ -1,7 +1,5 @@
 package com.sinensia.partemedico.integration.repositories;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -22,5 +20,13 @@ public interface QueriesRepository extends JpaRepository<ReportePL, Integer>{
 			+ "TO_DATE('2020-01','yyyy-MM') "
 			+ "AND TO_DATE('2020-02','yyyy-MM')")
 	public Query1DTO Quey1();
+
+	@Query("SELECT "
+			+ "AVG(r.peso) "			
+			+ " FROM ReportePL r "
+			+ "WHERE r.horaReporte BETWEEN "
+			+ "TO_DATE('2020-01','yyyy-MM') "
+			+ "AND TO_DATE('2020-02','yyyy-MM')")
+	public Double Quey2();
 	
 }
